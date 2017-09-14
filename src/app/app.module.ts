@@ -6,6 +6,7 @@ import { LoginInlineTemplateInlineStyleComponent } from './login--inline-templat
 import { LoginItIsComponent } from './login-it-is/login-it-is.component';
 import { LoginComponent } from './login/login.component';
 import {AuthService} from "./core/auth.service";
+import { FormsModule }   from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {AuthService} from "./core/auth.service";
     LoginComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [
     {provide: 'auth', useClass: AuthService }

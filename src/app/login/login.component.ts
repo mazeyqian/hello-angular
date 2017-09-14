@@ -7,14 +7,17 @@ import {Component, Inject, OnInit} from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  private username = '';
+  private password = '';
+
   constructor(@Inject('auth') private service) { }
 
   ngOnInit() {
   }
 
-  onClick(username, password) {
+  onClick() {
     /*console.log(`User: ${username}\n\rPassword: ${password}`);*/
-    console.log(`auth result is: ${this.service.loginWithCredentials(username, password)}`);
+    console.log(`auth result is: ${this.service.loginWithCredentials(this.username, this.password)}`);
   }
 
 }
