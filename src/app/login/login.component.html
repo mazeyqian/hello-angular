@@ -1,7 +1,12 @@
 <div>
-  <input type="text"
-         [(ngModel)]="username">
-  <input type="password"
-         [(ngModel)]="password">
+  <input required type="text"
+         [(ngModel)]="username"
+  #usernameRef="ngModel"
+  minlength="3">
+  {{usernameRef.errors | json}}
+  <input required type="password"
+         [(ngModel)]="password"
+  #passwordRef="ngModel">
+  {{passwordRef.valid}}
   <button type="button" (click)="onClick()">Login</button>
 </div>
